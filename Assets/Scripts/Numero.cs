@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Numero : MonoBehaviour
 {
@@ -44,6 +45,12 @@ public class Numero : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D objecteTocat)
     {
+        if (objecteTocat.tag == "ProjectilJugador")
+        {
+            // Actualitzar l'operació del mostrada a la UI.
+            GameObject.Find("OperacioEscritaText").GetComponent<OperacioEscritaText>().setOperacioText(_valorNumero.ToString());
+        }
+
         if (objecteTocat.tag == "ProjectilJugador" || objecteTocat.tag == "Jugador")
         {
             Destroy(gameObject);

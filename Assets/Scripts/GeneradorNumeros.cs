@@ -9,7 +9,7 @@ public class GeneradorNumeros : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("CreaNumero", 1f, 3f);
+        //InvokeRepeating("CreaNumero", 1f, 3f);
     }
 
     // Update is called once per frame
@@ -25,5 +25,15 @@ public class GeneradorNumeros : MonoBehaviour
 
         GameObject objecteNumero = Instantiate(_PrefabNumero);
         objecteNumero.transform.position = new Vector2(Random.Range(minPantalla.x, maxPantalla.x), maxPantalla.y);
+    }
+
+    public void AturarGeneracioNumeros()
+    {
+        CancelInvoke("CreaNumero");
+    }
+
+    public void IniciaGeneracioNumeros()
+    {
+        InvokeRepeating("CreaNumero", 1f, 3f);
     }
 }

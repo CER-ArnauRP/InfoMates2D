@@ -1,15 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Jugador : MonoBehaviour
 {
+    public GameObject _gameManager;
 
     public float _velNau;
 
     public GameObject _PrefabProjectil;
     public GameObject _posCano1;
-    public GameObject _posCano2;
+
+    public TMPro.TextMeshProUGUI _escutsRestantsText;
+    private const int MAX_ESCUTS = 3;
+    private int _escutsActuals;
+
+    public void InicialitzarNauJugador()
+    {
+        _escutsActuals = MAX_ESCUTS;
+        _escutsRestantsText.text = _escutsActuals.ToString();
+
+        transform.position = new Vector2(0, 0);
+        gameObject.SetActive(true);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -31,9 +45,6 @@ public class Jugador : MonoBehaviour
         {
             GameObject projectil1 = Instantiate(_PrefabProjectil);
             projectil1.transform.position = _posCano1.transform.position;
-
-            GameObject projectil2 = Instantiate(_PrefabProjectil);
-            projectil2.transform.position = _posCano2.transform.position;
         }
     }
 
@@ -61,7 +72,15 @@ public class Jugador : MonoBehaviour
     {
         if (objecteTocat.tag == "Numero")
         {
-            Destroy(gameObject);
+            _escutsActuals--;
+            _escutsRestantsText.text = _escutsActuals.ToString();
+
+            if (_escutsActuals == 0)
+            {
+                _gameManager.GetComponent<GameManager>().SetEstatGameManager(GameManager.EstatGameManager.GameOver);
+                //Destroy(gameObject);
+                gameObject.SetActive(false);
+            }
         }
     }
 }
