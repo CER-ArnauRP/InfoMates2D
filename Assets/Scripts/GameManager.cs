@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject _operacioEscritaText;
     public GameObject _gameOverText;
+    public TMPro.TextMeshProUGUI _punts;
 
     public enum EstatGameManager
     {
@@ -44,6 +45,7 @@ public class GameManager : MonoBehaviour
             _gameOverText.SetActive(false);
 
             _operacioEscritaText.GetComponent<OperacioEscritaText>().InicialitzaElement();
+            _punts.text = "0";
             
             break;
 

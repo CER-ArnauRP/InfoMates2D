@@ -34,6 +34,6 @@ public class GeneradorNumeros : MonoBehaviour
 
     public void IniciaGeneracioNumeros()
     {
-        InvokeRepeating("CreaNumero", 1f, 2f);
+        InvokeRepeating("CreaNumero", 1f, 1f);
     }
 }

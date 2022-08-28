@@ -46,17 +46,17 @@ public class OperacioEscritaText : MonoBehaviour
             {
                 // Sumem punts.
                 //Debug.Log("Correcte.");
-                /*int puntsActuals = Int32.Parse(_punts.text);// Input string was not in the correct format.
+                int puntsActuals = Int32.Parse(_punts.text.ToString());// Input string was not in the correct format.
                 puntsActuals += _resultatOperacio;
-                _punts.text = _resultatOperacio.ToString();*/
+                _punts.text = puntsActuals.ToString();
             }
             else
             {
                 // Baixem escuts.
                 //Debug.Log("No correcte.");
-                /*int puntsActuals = Int32.Parse(_punts.text);
+                int puntsActuals = Int32.Parse(_punts.text.ToString());
                 puntsActuals -= _resultatOperacio;
-                _punts.text = _resultatOperacio.ToString();*/
+                _punts.text = puntsActuals.ToString();
             }
 
             // Reiniciem el text de les operacions.
@@ -125,15 +125,6 @@ public class OperacioEscritaText : MonoBehaviour
         _ultimCaracterEscrit = nouCaracter;
 
         gameObject.GetComponent<TMPro.TextMeshProUGUI>().text += nouCaracter;
-        
-        /*if (gameObject.GetComponent<TMPro.TextMeshProUGUI>().text == "0")
-        {
-            gameObject.GetComponent<TMPro.TextMeshProUGUI>().text = nouCaracter;
-        }
-        else
-        {
-            gameObject.GetComponent<TMPro.TextMeshProUGUI>().text += nouCaracter;
-        }*/
     }
 
     public void InicialitzaElement()
