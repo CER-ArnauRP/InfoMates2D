@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public GameObject _nauJugador;
 
     public GameObject _generadorNumeros;
+    public GameObject _generadorOperacions;
 
     public GameObject _operacioEscritaText;
     public GameObject _gameOverText;
@@ -51,14 +52,16 @@ public class GameManager : MonoBehaviour
             _butoPlay.SetActive(false);
             _nauJugador.GetComponent<Jugador>().InicialitzarNauJugador();
             _generadorNumeros.GetComponent<GeneradorNumeros>().IniciaGeneracioNumeros();
+            _generadorOperacions.GetComponent<GeneradorOperacions>().IniciaGeneracioOperacions();
 
             break;
 
             case EstatGameManager.GameOver:
 
             _gameOverText.SetActive(true);
-             _generadorNumeros.GetComponent<GeneradorNumeros>().AturarGeneracioNumeros();
-             Invoke("PassarAEstatInici", 3f);
+            _generadorNumeros.GetComponent<GeneradorNumeros>().AturarGeneracioNumeros();
+            _generadorOperacions.GetComponent<GeneradorOperacions>().AturarGeneracioOperacions();
+            Invoke("PassarAEstatInici", 3f);
 
             break;
         }

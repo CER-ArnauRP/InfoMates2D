@@ -30,7 +30,7 @@ public class ProjectilJugador : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D objecteTocat)
     {
-        if (objecteTocat.tag == "Numero")
+        if (objecteTocat.tag == "Numero" || objecteTocat.tag == "Operacio")
         {
             //Debug.Log(objecteTocat.GetComponent<Numero>().getValorNumero());
             Destroy(gameObject);

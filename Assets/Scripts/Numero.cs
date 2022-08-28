@@ -48,7 +48,8 @@ public class Numero : MonoBehaviour
         if (objecteTocat.tag == "ProjectilJugador")
         {
             // Actualitzar l'operació del mostrada a la UI.
-            GameObject.Find("OperacioEscritaText").GetComponent<OperacioEscritaText>().setOperacioText(_valorNumero.ToString());
+            //GameObject.Find("OperacioEscritaText").GetComponent<OperacioEscritaText>().ConcatenaCaracterAlTextFormula(_valorNumero.ToString());
+            GameObject.Find("OperacioEscritaText").GetComponent<OperacioEscritaText>().setUltimCaracterEscrit(_valorNumero.ToString());
         }
 
         if (objecteTocat.tag == "ProjectilJugador" || objecteTocat.tag == "Jugador")
