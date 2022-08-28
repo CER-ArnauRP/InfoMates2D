@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class GeneradorOperacions : MonoBehaviour
 {
-    //private string _operacioActual = "N";
-
     public GameObject _PrefabOperacio;
 
     // Start is called before the first frame update
@@ -36,17 +34,6 @@ public class GeneradorOperacions : MonoBehaviour
 
     public void IniciaGeneracioOperacions()
     {
-        //_operacioActual = "N";
         InvokeRepeating("CreaOperacio", 3f, 4f);
     }
-
-    /*public void setOperacioActual(string operacio)
-    {
-        _operacioActual = operacio;
-    }
-
-    public string getOperacioActual()
-    {
-        return _operacioActual;
-    }*/
 }

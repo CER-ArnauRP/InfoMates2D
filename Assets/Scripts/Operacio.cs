@@ -27,20 +27,6 @@ public class Operacio : MonoBehaviour
             _operacioSeleccionada = 4; // El signe de l'igual.
             gameObject.GetComponent<SpriteRenderer>().sprite = _spritesOperacions[_operacioSeleccionada];
         }
-
-        //if (GameObject.Find("GeneradorOperacions").GetComponent<GeneradorOperacions>().getOperacioActual() != "N")
-        /*if (GameObject.Find("OperacioEscritaText").GetComponent<OperacioEscritaText>().getUltimaOperacioEscrita() != "N")
-        {
-            // Si ja hi ha una operació escrita (+, x o =), que només surtin iguals en les operacions.
-            _operacioSeleccionada = 4; // El signe de l'igual.
-            gameObject.GetComponent<SpriteRenderer>().sprite = _spritesOperacions[_operacioSeleccionada];
-        }
-        else
-        {
-            System.Random aleatori = new System.Random();
-            _operacioSeleccionada = aleatori.Next(0, 4); // En la posició 4, hi ha el "=".
-            gameObject.GetComponent<SpriteRenderer>().sprite = _spritesOperacions[_operacioSeleccionada];
-        }*/
     }
 
     // Update is called once per frame
